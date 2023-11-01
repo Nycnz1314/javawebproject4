@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.example</groupId>
+  <artifactId>javawebproject1</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>javawebproject1</name>
+  <packaging>war</packaging>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <junit.version>5.9.2</junit.version>
+  </properties>
+
+  <dependencies>
+      <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.28</version>
+    </dependency>
+      <dependency>
+          <groupId>commons-io</groupId>
+          <artifactId>commons-io</artifactId>
+          <version>2.6</version>
+      </dependency>
+      <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+<dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+      <dependency>
+          <groupId>commons-dbutils</groupId>
+          <artifactId>commons-dbutils</artifactId>
+          <version>1.7</version>
+      </dependency>
+      <dependency>
+          <groupId>com.mchange</groupId>
+          <artifactId>c3p0</artifactId>
+          <version>0.9.5.5</version>
+      </dependency>
+      <dependency>
+          <groupId>commons-beanutils</groupId>
+          <artifactId>commons-beanutils</artifactId>
+          <version>1.8.0</version>
+      </dependency>
+      <dependency>
+          <groupId>com.alibaba.fastjson2</groupId>
+          <artifactId>fastjson2</artifactId>
+          <version>2.0.0</version>
+      </dependency></dependencies>
+
+  <build>
+    <plugins>
+<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.2</version>
+      </plugin>
+        <plugin>
+            <groupId>org.apache.tomcat.maven</groupId>
+            <artifactId>tomcat7-maven-plugin</artifactId>
+            <version>2.2</version>
+            <configuration>
+                <port>8088</port>
+                <path>/toutiao1</path>
+                <uriEncoding>UTF-8</uriEncoding>
+                <server>tomcat7</server>
+                <!--定义通过HTTP协议的静态资源的访问路径-->
+                <staticContextPath>/pic</staticContextPath>
+                <!--定义静态资源在文件目录中的存放路径-->
+                <staticContextDocbase>E:\java项目开发实验报告\uploadFile</staticContextDocbase>
+            </configuration>
+        </plugin></plugins>
+  </build>
+</project>
